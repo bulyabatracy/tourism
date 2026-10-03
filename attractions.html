@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractions - Explore Uganda</title>
+    <meta name="description"
+        content="Explore Uganda's top tourist attractions, cultural sites, and nature experiences in Kampala and beyond.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" fill="#1B5E20" />
+                <circle cx="50" cy="50" r="32" fill="#FFF8E1" />
+                <polygon points="50,15 62,50 50,50" fill="#FF8F00" />
+                <polygon points="50,85 38,50 50,50" fill="#1B5E20" />
+                <circle cx="50" cy="50" r="4" fill="#212121" />
+            </svg>
+            <h1>Explore Uganda</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="attractions.html" style="color: var(--primary-green);">Attractions</a></li>
+                <li><a href="favorites.html">Favorites ❤️</a></li>
+                <li><a href="itinerary.html">My Trip 🗺️</a></li>
+            </ul>
+        </nav>
+        <button class="sign-in-btn">Sign In</button>
+    </header>
+
+    <!-- TOP SEARCH & DYNAMIC FILTERING BAR (From Wireframe 1) -->
+    <section class="listing-header">
+        <div class="search-bar" style="margin: 1rem auto; max-width: 100%;">
+            <input type="text" placeholder="Search attractions, experiences, places in Kampala...">
+            <button>Search</button>
+        </div>
+        <div class="filter-status-bar"
+            style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto 2rem auto;">
+            <p><span id="results-count">12 results found</span> - Filters active: Category • Location • Price</p>
+            <a href="#" class="clear-all" aria-label="Clear all active filters">[Clear all filters]</a>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT: LISTING + FILTERS -->
+    <main class="listing-container" id="attractions">
+
+        <!-- FILTERS SIDEBAR -->
+        <aside class="filters-sidebar">
+            <h3>FILTERS</h3>
+
+            <div class="filter-group">
+                <h4>Category</h4>
+                <label><input type="checkbox" class="filter-category" value="Wildlife"> Wildlife (6)</label>
+                <label><input type="checkbox" class="filter-category" value="Culture"> Culture (4)</label>
+                <label><input type="checkbox" class="filter-category" value="Adventure"> Adventure (3)</label>
+                <label><input type="checkbox" class="filter-category" value="Historical"> Historical (5)</label>
+                <label><input type="checkbox" class="filter-category" value="Nature"> Nature (6)</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Location</h4>
+                <label><input type="checkbox" class="filter-location" value="Kampala"> Kampala Central (5)</label>
+                <label><input type="checkbox" class="filter-location" value="Entebbe"> Entebbe (3)</label>
+                <label><input type="checkbox" class="filter-location" value="Jinja"> Jinja Road (4)</label>
+                <label><input type="checkbox" class="filter-location" value="Nakasero"> Nakasero (2)</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Price</h4>
+                <label><input type="checkbox" class="filter-price" value="0-20"> $ (0-20) (4)</label>
+                <label><input type="checkbox" class="filter-price" value="20-50"> $$ (20-50) (5)</label>
+                <label><input type="checkbox" class="filter-price" value="50+"> $$$ (50+) (3)</label>
+            </div>
+
+            <button id="reset-filters" class="reset-btn">[Reset Filters]</button>
+        </aside>
+
+        <!-- RESULTS GRID -->
+        <section class="results-area">
+            <div class="results-header">
+                <p id="results-status-text">Showing all attractions</p>
+                <div class="sort-options">
+                    <label>Sort by:
+                        <select id="sort-select">
+                            <option value="recommended">Recommended</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Rating</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+            <div id="attractions-grid" class="grid-container">
+                <!-- Cards injected by main.js -->
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="pagination-controls">
+                <a href="#" class="page-link" aria-label="Previous page">‹ Prev</a>
+                <a href="#" class="page-link active" aria-label="Page 1">1</a>
+                <a href="#" class="page-link" aria-label="Page 2">2</a>
+                <a href="#" class="page-link" aria-label="Page 3">3</a>
+                <a href="#" class="page-link" aria-label="Next page">Next ›</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-columns">
+            <div>
+                <h4>About Kampala Tourism</h4>
+                <ul>
+                    <li>Discover Kampala's rich heritage</li>
+                    <li>Travel guides & resources</li>
+                    <li>Sustainable tourism</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="attractions.html">Attractions</a></li>
+                    <li><a href="favorites.html">Favorites</a></li>
+                    <li><a href="itinerary.html">My Trip</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: info@kampalatourism.ug</li>
+                    <li>Phone: +256 000 000 000</li>
+                    <li>Location: Kampala, Uganda</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Newsletter</h4>
+                <form onsubmit="event.preventDefault(); alert('Subscribed!');"
+                    style="display: flex; flex-direction: column; gap: 10px;">
+                    <input type="email" placeholder="Email address..." required
+                        style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    <button type="submit" class="sign-in-btn" style="width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kampala Tourism. All rights reserved. | Privacy Policy | Terms of Service | Cookie Policy</p>
+        </div>
+    </footer>
+
+    <!-- LINK TO JAVASCRIPT FOR LISTING -->
+    <script src="js/main.js" type="module"></script>
+</body>
+
+</html>

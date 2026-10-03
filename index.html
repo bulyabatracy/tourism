@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Uganda - Home</title>
+    <meta name="description"
+        content="Explore Uganda's top tourist attractions, cultural sites, and nature experiences in Kampala and beyond.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" fill="#1B5E20" />
+                <circle cx="50" cy="50" r="32" fill="#FFF8E1" />
+                <polygon points="50,15 62,50 50,50" fill="#FF8F00" />
+                <polygon points="50,85 38,50 50,50" fill="#1B5E20" />
+                <circle cx="50" cy="50" r="4" fill="#212121" />
+            </svg>
+            <h1>Explore Uganda</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="attractions.html">Attractions</a></li>
+                <li><a href="favorites.html">Favorites ❤️</a></li>
+                <li><a href="itinerary.html">My Trip 🗺️</a></li>
+            </ul>
+        </nav>
+        <button class="sign-in-btn">Sign In</button>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h2>Discover Kampala</h2>
+        <p>Explore top attractions, cultural sites, and nature experiences in Uganda's capital city</p>
+        <div class="search-bar">
+            <input type="text" placeholder="Search attractions, activities, neighborhoods...">
+            <button>Search</button>
+        </div>
+        <div class="trending-searches">
+            <span>TRENDING SEARCHES:</span>
+            <a href="#">Kasubi Tombs</a>
+            <a href="#">Uganda Museum</a>
+            <a href="#">Ndere Cultural Centre</a>
+            <a href="#">Gaddafi Mosque</a>
+        </div>
+    </section>
+
+    <!-- FEATURED ATTRACTIONS SECTION -->
+    <section class="featured-section">
+        <div class="section-header">
+            <h2>Featured Attractions</h2>
+            <a href="attractions.html" class="view-all-link" aria-label="View all attractions">View All Attractions
+                →</a>
+        </div>
+        <div class="featured-grid">
+            <div class="card featured-card">
+                <img src="images/1_kasubi_tombs.jpg" alt="Kasubi Tombs">
+                <div class="card-content">
+                    <h3>Kasubi Tombs</h3>
+                    <p>UNESCO World Heritage site & cultural landmark</p>
+                    <a href="detail.html?id=1" class="btn-view" aria-label="Learn more about Kasubi Tombs"
+                        style="background: var(--secondary-orange);">Learn More</a>
+                </div>
+            </div>
+            <div class="card featured-card">
+                <img src="images/2_uganda_museum.jpg" alt="Uganda Museum">
+                <div class="card-content">
+                    <h3>Uganda Museum</h3>
+                    <p>History, culture & ethnography museum</p>
+                    <a href="detail.html?id=2" class="btn-view" aria-label="Learn more about Uganda Museum"
+                        style="background: var(--secondary-orange);">Learn More</a>
+                </div>
+            </div>
+            <div class="card featured-card">
+                <img src="images/3_lake_victoria.jpg" alt="Lake Victoria">
+                <div class="card-content">
+                    <h3>Lake Victoria - Ggaba Beach</h3>
+                    <p>Lakeside recreation & boat tours</p>
+                    <a href="detail.html?id=3" class="btn-view" aria-label="Learn more about Lake Victoria"
+                        style="background: var(--secondary-orange);">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-columns">
+            <div>
+                <h4>About Kampala Tourism</h4>
+                <ul>
+                    <li>Discover Kampala's rich heritage</li>
+                    <li>Travel guides & resources</li>
+                    <li>Sustainable tourism</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="attractions.html">Attractions</a></li>
+                    <li><a href="favorites.html">Favorites</a></li>
+                    <li><a href="itinerary.html">My Trip</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: info@kampalaturism.ug</li>
+                    <li>Phone: +256 000 000 000</li>
+                    <li>Location: Kampala, Uganda</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Newsletter</h4>
+                <form onsubmit="event.preventDefault(); alert('Subscribed!');"
+                    style="display: flex; flex-direction: column; gap: 10px;">
+                    <input type="email" placeholder="Email address..." required
+                        style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    <button type="submit" class="sign-in-btn" style="width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kampala Tourism. All rights reserved. | Privacy Policy | Terms of Service | Cookie Policy</p>
+        </div>
+    </footer>
+</body>
+
+</html>

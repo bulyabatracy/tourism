@@ -1,0 +1,626 @@
+/* css/style.css */
+:root {
+    --primary-green: #1B5E20;
+    --secondary-orange: #FF8F00;
+    --bg-sand: #FFF8E1;
+    --text-dark: #212121;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-sand);
+    color: var(--text-dark);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: bold;
+}
+
+.sign-in-btn {
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #e0e0e0;
+}
+
+.hero h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.search-bar {
+    margin: 2rem auto;
+    max-width: 600px;
+    display: flex;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.trending-searches a {
+    margin: 0 5px;
+    color: var(--secondary-orange);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Listing Layout */
+.listing-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Filters Sidebar */
+.filters-sidebar {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filter-group {
+    margin-bottom: 1.5rem;
+}
+
+.filter-group h4 {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 10px;
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Results Grid */
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Attraction Card */
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: #ccc;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card h3 {
+    margin: 0 0 0.5rem 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card .rating {
+    color: var(--secondary-orange);
+    font-weight: bold;
+}
+
+.card .price {
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+.card .btn-view {
+    display: block;
+    text-align: center;
+    background: var(--primary-green);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-columns a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid #555;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+}
+
+/* --- Detail Page Styles --- */
+.detail-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.detail-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* Left Column */
+.detail-main h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.detail-meta {
+    color: var(--secondary-orange);
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.gallery-placeholder {
+    width: 100%;
+    height: 400px;
+    background: #ccc;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.thumbnail-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.thumbnail-row div {
+    width: 100px;
+    height: 80px;
+    background: #ddd;
+    border-radius: 8px;
+}
+
+.description-box,
+.reviews-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.description-box h3,
+.reviews-box h3 {
+    border-bottom: 2px solid var(--primary-green);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+/* Right Column (Booking) */
+.booking-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 20px;
+}
+
+.booking-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0;
+}
+
+.booking-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.book-btn {
+    width: 100%;
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+.book-btn:hover {
+    background: #144917;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 200px;
+    background: #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    color: #555;
+}
+
+/* Itinerary Styles */
+.itinerary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.itinerary-item img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+.itinerary-info {
+    flex: 1;
+}
+
+.itinerary-info h4 {
+    margin: 0 0 0.3rem 0;
+}
+
+.itinerary-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.remove-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo svg {
+    width: 45px;
+    height: 45px;
+}
+
+.logo h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-green);
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/* --- WIREFRAME ADDITIONS --- */
+
+/* Featured Attractions Section */
+.featured-section {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.view-all-link {
+    color: var(--secondary-orange);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* Filter Status Bar */
+.filter-status-bar {
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+}
+
+.filter-status-bar p {
+    margin: 0 0 5px 0;
+}
+
+.clear-all {
+    color: #666;
+    text-decoration: underline;
+    font-size: 0.8rem;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+.page-link {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--text-dark);
+    background: white;
+}
+
+.page-link.active {
+    background: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
+}
+
+.page-link:hover:not(.active) {
+    background: #f0f0f0;
+}
+
+/* Footer updates */
+.footer-columns ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-columns li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.footer-columns h4 {
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- RESPONSIVE DESIGN (Mobile & Tablet) --- */
+
+/* Tablet and small laptop screens */
+@media (max-width: 900px) {
+
+    /* Header stacks logo, nav, and button */
+    header {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+
+    /* Hero section adjusts for smaller screens */
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-bar input {
+        border-radius: 5px;
+    }
+
+    .search-bar button {
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    /* Main listing layout: Stacks filters on top of results */
+    .listing-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    /* Featured Attractions: 1 card per row instead of 3 */
+    .featured-section {
+        padding: 0 1rem;
+        margin: 2rem auto;
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Detail Page: Stacks main info and sidebar */
+    .detail-container {
+        padding: 0 1rem;
+    }
+
+    .detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-card {
+        position: static;
+        /* Disables the sticky sidebar on mobile */
+    }
+
+    /* Footer stacks columns vertically */
+    .footer-columns {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 480px) {
+
+    /* Force the card grid to be 1 column */
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    /* Itinerary items stack vertically */
+    .itinerary-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .itinerary-item img {
+        margin-right: 0;
+        width: 100%;
+        height: 120px;
+    }
+
+    /* Filter sidebar adjustments */
+    .filters-sidebar {
+        padding: 1rem;
+    }
+}

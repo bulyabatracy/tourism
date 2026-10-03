@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "name": "Kasubi Tombs",
+        "district": "Kampala",
+        "category": "Culture",
+        "description": "UNESCO World Heritage site and burial grounds for the Kings of Buganda.",
+        "entryFeeUGX": 25000,
+        "entryFeeUSD": 7,
+        "rating": 4.5,
+        "latitude": 0.3476,
+        "longitude": 32.5547,
+        "activities": [
+            "Cultural Tour",
+            "Photography",
+            "Guided Walk"
+        ],
+        "image": "images/1_kasubi_tombs.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Uganda Museum",
+        "district": "Kampala",
+        "category": "Culture",
+        "description": "History, culture & ethnography museum showcasing Uganda's rich heritage.",
+        "entryFeeUGX": 15000,
+        "entryFeeUSD": 4,
+        "rating": 4.3,
+        "latitude": 0.3350,
+        "longitude": 32.5825,
+        "activities": [
+            "Museum Tour",
+            "Educational",
+            "Artifacts"
+        ],
+        "image": "images/2_uganda_museum.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Lake Victoria Boat Ride",
+        "district": "Entebbe",
+        "category": "Nature",
+        "description": "Scenic boat tours on Lake Victoria, visiting local islands and bird watching.",
+        "entryFeeUGX": 150000,
+        "entryFeeUSD": 40,
+        "rating": 4.7,
+        "latitude": 0.0512,
+        "longitude": 32.4637,
+        "activities": [
+            "Boat Tour",
+            "Bird Watching",
+            "Fishing"
+        ],
+        "image": "images/3_lake_victoria.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Ndere Cultural Centre",
+        "district": "Kampala",
+        "category": "Culture",
+        "description": "Traditional music, dance, and cultural performances from all Ugandan tribes.",
+        "entryFeeUGX": 50000,
+        "entryFeeUSD": 15,
+        "rating": 4.4,
+        "latitude": 0.3611,
+        "longitude": 32.5981,
+        "activities": [
+            "Cultural Show",
+            "Dinner",
+            "Music"
+        ],
+        "image": "images/4_ndere_cultural_centre.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Gaddafi Mosque",
+        "district": "Kampala",
+        "category": "Historical",
+        "description": "One of the largest mosques in Africa, offering panoramic views of Kampala from its minaret.",
+        "entryFeeUGX": 0,
+        "entryFeeUSD": 0,
+        "rating": 4.6,
+        "latitude": 0.3156,
+        "longitude": 32.5756,
+        "activities": [
+            "Architecture",
+            "City Views",
+            "Guided Tour"
+        ],
+        "image": "images/5_gaddafi_mosque.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Mabamba Swamp Birding",
+        "district": "Entebbe",
+        "category": "Wildlife",
+        "description": "Home to the rare Shoebill stork. A must-visit for bird watchers.",
+        "entryFeeUGX": 180000,
+        "entryFeeUSD": 50,
+        "rating": 4.5,
+        "latitude": 0.1167,
+        "longitude": 32.4167,
+        "activities": [
+            "Bird Watching",
+            "Canoe",
+            "Nature Walk"
+        ],
+        "image": "images/6_mabamba_swamp.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Bwindi Impenetrable Forest",
+        "district": "Kanungu",
+        "category": "Wildlife",
+        "description": "Home to half the world's population of mountain gorillas.",
+        "entryFeeUGX": 2800000,
+        "entryFeeUSD": 700,
+        "rating": 4.9,
+        "latitude": -1.0600,
+        "longitude": 29.6600,
+        "activities": [
+            "Gorilla Trekking",
+            "Hiking",
+            "Nature"
+        ],
+        "image": "images/7_bwindi_forest.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Murchison Falls",
+        "district": "Masindi",
+        "category": "Nature",
+        "description": "The world's most powerful waterfall, located on the Victoria Nile.",
+        "entryFeeUGX": 150000,
+        "entryFeeUSD": 40,
+        "rating": 4.8,
+        "latitude": 2.2333,
+        "longitude": 31.7833,
+        "activities": [
+            "Waterfall View",
+            "Game Drive",
+            "Boat Safari"
+        ],
+        "image": "images/8_murchison_falls.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Jinja Source of the Nile",
+        "district": "Jinja",
+        "category": "Adventure",
+        "description": "The exact spot where the River Nile starts its journey to the Mediterranean.",
+        "entryFeeUGX": 30000,
+        "entryFeeUSD": 8,
+        "rating": 4.6,
+        "latitude": 0.4333,
+        "longitude": 33.2000,
+        "activities": [
+            "Boat Ride",
+            "Photography",
+            "Historical Site"
+        ],
+        "image": "images/9_source_of_the_nile.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Kidepo Valley National Park",
+        "district": "Kaabong",
+        "category": "Wildlife",
+        "description": "Uganda's most isolated and pristine park, offering true African wilderness.",
+        "entryFeeUGX": 150000,
+        "entryFeeUSD": 40,
+        "rating": 4.9,
+        "latitude": 3.8667,
+        "longitude": 33.7500,
+        "activities": [
+            "Game Drive",
+            "Bird Watching",
+            "Cultural Encounters"
+        ],
+        "image": "images/10_kidepo_valley.jpg"
+    }
+]

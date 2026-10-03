@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorites - Explore Uganda</title>
+    <meta name="description"
+        content="Explore Uganda's top tourist attractions, cultural sites, and nature experiences in Kampala and beyond.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <!-- SVG Compass Logo -->
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Green Outer Circle -->
+                <circle cx="50" cy="50" r="45" fill="#1B5E20" />
+                <!-- Sand Inner Circle -->
+                <circle cx="50" cy="50" r="32" fill="#FFF8E1" />
+                <!-- Orange Needle (North) -->
+                <polygon points="50,15 62,50 50,50" fill="#FF8F00" />
+                <!-- Dark Green Needle (South) -->
+                <polygon points="50,85 38,50 50,50" fill="#1B5E20" />
+                <!-- Center Pin -->
+                <circle cx="50" cy="50" r="4" fill="#212121" />
+            </svg>
+            <h1>Explore Uganda</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#attractions">Attractions</a></li>
+                <li><a href="favorites.html">Favorites ❤️</a></li>
+                <li><a href="itinerary.html">My Trip 🗺️</a></li> <!-- UPDATED LINK -->
+            </ul>
+        </nav>
+        <button class="sign-in-btn">Sign In</button>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="listing-container" style="grid-template-columns: 1fr;">
+        <section class="results-area">
+            <div class="results-header">
+                <h2>My Saved Attractions</h2>
+                <p id="results-count">Loading...</p>
+            </div>
+
+            <!-- Grid for Favorites -->
+            <div id="favorites-grid" class="grid-container">
+                <!-- Cards will appear here dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-columns">
+            <div>
+                <h4>About Kampala Tourism</h4>
+                <p>Discover Kampala's rich heritage</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Attractions</a></li>
+                    <li><a href="favorites.html">Favorites</a></li>
+                    <li><a href="itinerary.html">My Trip</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>Email: info@kampalatourism.ug</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kampala Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- LINK TO JAVASCRIPT -->
+    <script src="js/favorites.js" type="module"></script>
+</body>
+
+</html>
