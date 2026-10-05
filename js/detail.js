@@ -37,12 +37,12 @@ async function loadDetailPage() {
                 <!-- LEFT COLUMN: Images & Info -->
                 <div class="detail-main">
                     <h1>${place.name} — ${place.category} Experience 
-                        <span id="detail-heart" style="color:${heartColor}; cursor:pointer; font-size:1.5rem;" onclick="toggleDetailFavorite(${place.id})">❤</span>
+                        <span id="detail-heart" style="color:${heartColor}; cursor:pointer; font-size:1.5rem;" onclick="toggleDetailFavorite(${place.id})" aria-label="Toggle favorite status" role="button">❤</span>
                     </h1>
                     <p class="detail-meta">★ ${place.rating} • ${place.district} • ${place.activities.join(' • ')}</p>
                     
-                    <div class="gallery-placeholder">
-                        <img src="${place.image}" alt="${place.name}" style="width:100%; height:420px; object-fit:cover; border-radius:12px;"
+                    <div class="gallery-placeholder" style="padding:0; overflow:hidden;">
+                        <img src="${place.image}" alt="${place.name}" style="width:100%; height:420px; object-fit:cover;"
                              onerror="this.src='https://via.placeholder.com/800x500?text=${encodeURIComponent(place.name)}'">
                     </div>
                     <div class="thumbnail-row">
@@ -91,14 +91,20 @@ async function loadDetailPage() {
                             <button type="submit" class="book-btn">BOOK NOW →</button>
                             <p style="font-size:0.8rem; text-align:center; margin-top:10px;">* Confirmation will be emailed. Free cancellation up to 24h.</p>
                             
-                            <!-- NEW BUTTON HERE -->
-                            <button type="button" class="book-btn" style="background: var(--secondary-orange); margin-top: 1rem;" onclick="addToItinerary(${place.id})">Add to Itinerary 🗺️</button>
+                            <button type="button" class="book-btn" style="background: var(--secondary-orange); margin-top: 1rem;" onclick="addToItinerary(${place.id})" aria-label="Add ${place.name} to itinerary">Add to Itinerary 🗺️</button>
                         </form>
+                    </div>
+
+                    <!-- NEW: WEATHER FORECAST CARD -->
+                    <div class="booking-card">
+                        <h3>WEATHER FORECAST</h3>
+                        <div id="weather-container" style="margin-top: 10px;">
+                            <p style="font-size: 0.9rem; color: #666;">Loading weather...</p>
+                        </div>
                     </div>
 
                     <div class="booking-card">
                         <h3>LOCATION & MAP</h3>
-                        <!-- UPDATED TO IFRAME (No API key needed) -->
                         <iframe 
                             width="100%" 
                             height="250" 
@@ -108,7 +114,7 @@ async function loadDetailPage() {
                             src="https://www.google.com/maps?q=${place.latitude},${place.longitude}&output=embed">
                         </iframe>
                         <p style="font-size:0.9rem; margin-top:10px;"><strong>Location:</strong> ${place.district}, Uganda</p>
-                        <p><a href="https://www.google.com/maps/search/?api=1&query=${place.latitude},${place.longitude}" target="_blank">[ Open in Maps → ]</a></p>
+                        <p><a href="https://www.google.com/maps/search/?api=1&query=${place.latitude},${place.longitude}" target="_blank" aria-label="Open location in Google Maps">[ Open in Maps → ]</a></p>
                     </div>
 
                     <div class="booking-card">
@@ -124,9 +130,56 @@ async function loadDetailPage() {
             </div>
         `;
 
+        // 6. Fetch the weather for this location
+        fetchWeather(place.latitude, place.longitude);
+
     } catch (error) {
         console.error("Error loading details:", error);
         container.innerHTML = "<h2>Error loading data. Please try again later.</h2>";
+    }
+}
+
+// --- NEW: Function to fetch and display weather from Open-Meteo ---
+async function fetchWeather(lat, lng) {
+    const container = document.getElementById('weather-container');
+    if (!container) return;
+
+    try {
+        // Open-Meteo API (no API key needed)
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto&forecast_days=3`;
+
+        const response = await fetch(url);
+        const data = await response.json();
+
+        // Map WMO Weather Codes to emojis and descriptions
+        const getWeatherInfo = (code) => {
+            if (code === 0) return { icon: '☀️', text: 'Clear' };
+            if (code >= 1 && code <= 3) return { icon: '⛅', text: 'Partly cloudy' };
+            if (code === 45 || code === 48) return { icon: '🌫️', text: 'Foggy' };
+            if (code >= 51 && code <= 67) return { icon: '🌧️', text: 'Rainy' };
+            if (code >= 71 && code <= 77) return { icon: '❄️', text: 'Snow' };
+            if (code >= 80 && code <= 82) return { icon: '🌦️', text: 'Showers' };
+            if (code >= 95 && code <= 99) return { icon: '⛈️', text: 'Storm' };
+            return { icon: '☁️', text: 'Cloudy' };
+        };
+
+        let weatherHTML = '';
+        for (let i = 0; i < 3; i++) {
+            const date = new Date(data.daily.time[i]).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+            const info = getWeatherInfo(data.daily.weathercode[i]);
+            weatherHTML += `
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #eee; font-size: 0.9rem;">
+                    <span>${date}</span>
+                    <span>${info.icon} ${info.text}</span>
+                    <span><strong>${Math.round(data.daily.temperature_2m_max[i])}°</strong> / ${Math.round(data.daily.temperature_2m_min[i])}°</span>
+                </div>
+            `;
+        }
+        container.innerHTML = weatherHTML;
+
+    } catch (error) {
+        console.error("Error fetching weather:", error);
+        container.innerHTML = "<p style='font-size:0.9rem;'>Weather data unavailable.</p>";
     }
 }
 
@@ -148,7 +201,7 @@ window.toggleDetailFavorite = function (id) {
     localStorage.setItem('ugandaFavorites', JSON.stringify(savedIds));
 }
 
-// NEW: Global function to add to itinerary
+// Global function to add to itinerary
 window.addToItinerary = function (id) {
     let savedIds = JSON.parse(localStorage.getItem('ugandaItinerary')) || [];
 
