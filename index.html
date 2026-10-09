@@ -14,7 +14,6 @@
 
 <body>
 
-    <!-- HEADER -->
     <header>
         <div class="logo">
             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -26,15 +25,27 @@
             </svg>
             <h1>Explore Uganda</h1>
         </div>
-        <nav>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav id="main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="attractions.html">Attractions</a></li>
                 <li><a href="favorites.html">Favorites ❤️</a></li>
                 <li><a href="itinerary.html">My Trip 🗺️</a></li>
+                <li class="mobile-signin"><button class="sign-in-btn">Sign In</button></li>
             </ul>
         </nav>
-        <button class="sign-in-btn">Sign In</button>
+
+        <!-- Desktop Sign In Button -->
+        <button class="sign-in-btn desktop-signin">Sign In</button>
     </header>
 
     <!-- HERO SECTION -->
@@ -133,6 +144,9 @@
             <p>&copy; 2026 Kampala Tourism. All rights reserved. | Privacy Policy | Terms of Service | Cookie Policy</p>
         </div>
     </footer>
+
+    <!-- LINK TO JAVASCRIPT -->
+    <script src="js/main.js" type="module"></script>
 </body>
 
 </html>

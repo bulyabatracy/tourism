@@ -123,6 +123,56 @@ function applySort() {
 
 // 6. Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
+
+    // --- MOBILE HAMBURGER MENU TOGGLE ---
+    const menuToggle = document.getElementById('mobile-menu');
+    const mainNav = document.getElementById('main-nav');
+
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            menuToggle.classList.toggle('open'); // For animating the hamburger to X
+        });
+
+        // Close the menu when a link is clicked
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                menuToggle.classList.remove('open');
+            });
+        });
+    }
+
+    // --- SIGN IN FUNCTIONALITY ---
+    const signInBtns = document.querySelectorAll('.sign-in-btn');
+    const currentUser = localStorage.getItem('ugandaUser');
+
+    signInBtns.forEach(btn => {
+        if (btn.type === 'submit') return; // Skip the newsletter subscribe button
+
+        // If user is already signed in, update the button
+        if (currentUser) {
+            btn.textContent = `Hi, ${currentUser}`;
+            btn.style.background = '#444';
+
+            btn.addEventListener('click', () => {
+                if (confirm("Do you want to sign out?")) {
+                    localStorage.removeItem('ugandaUser');
+                    location.reload();
+                }
+            });
+        } else {
+            // If not signed in, prompt for name
+            btn.addEventListener('click', () => {
+                const name = prompt("Enter your name to sign in:");
+                if (name && name.trim()) {
+                    localStorage.setItem('ugandaUser', name.trim());
+                    location.reload();
+                }
+            });
+        }
+    });
+
     // Check if we are on the Attractions Page
     const attractionsGrid = document.getElementById('attractions-grid');
 

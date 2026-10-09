@@ -15,7 +15,7 @@
 <body>
 
     <!-- HEADER -->
-    <header>
+        <header>
         <div class="logo">
             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="50" r="45" fill="#1B5E20" />
@@ -26,17 +26,28 @@
             </svg>
             <h1>Explore Uganda</h1>
         </div>
-        <nav>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav id="main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="attractions.html" style="color: var(--primary-green);">Attractions</a></li>
+                <li><a href="attractions.html">Attractions</a></li>
                 <li><a href="favorites.html">Favorites ❤️</a></li>
                 <li><a href="itinerary.html">My Trip 🗺️</a></li>
+                <li class="mobile-signin"><button class="sign-in-btn">Sign In</button></li>
             </ul>
         </nav>
-        <button class="sign-in-btn">Sign In</button>
+        
+        <!-- Desktop Sign In Button -->
+        <button class="sign-in-btn desktop-signin">Sign In</button>
     </header>
-
     <!-- TOP SEARCH & DYNAMIC FILTERING BAR (From Wireframe 1) -->
     <section class="listing-header">
         <div class="search-bar" style="margin: 1rem auto; max-width: 100%;">

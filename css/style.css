@@ -14,7 +14,7 @@ body {
     color: var(--text-dark);
 }
 
-/* Header */
+/* --- HEADER & NAVIGATION --- */
 header {
     display: flex;
     justify-content: space-between;
@@ -22,12 +22,34 @@ header {
     padding: 1rem 2rem;
     background: white;
     border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo svg {
+    width: 45px;
+    height: 45px;
+}
+
+.logo h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-green);
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
@@ -45,7 +67,32 @@ nav a {
     cursor: pointer;
 }
 
-/* Hero */
+/* --- HAMBURGER BUTTON (Hidden on Desktop) --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--text-dark);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* Hide the mobile-only sign-in link on desktop */
+.mobile-signin {
+    display: none;
+}
+
+/* --- HERO --- */
 .hero {
     text-align: center;
     padding: 4rem 2rem;
@@ -87,7 +134,7 @@ nav a {
     font-size: 0.9rem;
 }
 
-/* Listing Layout */
+/* --- LISTING LAYOUT --- */
 .listing-container {
     display: grid;
     grid-template-columns: 250px 1fr;
@@ -97,7 +144,6 @@ nav a {
     margin: 0 auto;
 }
 
-/* Filters Sidebar */
 .filters-sidebar {
     background: white;
     padding: 1.5rem;
@@ -131,7 +177,6 @@ nav a {
     cursor: pointer;
 }
 
-/* Results Grid */
 .results-header {
     display: flex;
     justify-content: space-between;
@@ -145,7 +190,7 @@ nav a {
     gap: 1.5rem;
 }
 
-/* Attraction Card */
+/* --- ATTRACTION CARD --- */
 .card {
     background: white;
     border-radius: 12px;
@@ -195,7 +240,7 @@ nav a {
     margin-top: 1rem;
 }
 
-/* Footer */
+/* --- FOOTER --- */
 footer {
     background: #333;
     color: white;
@@ -214,6 +259,22 @@ footer {
     text-decoration: none;
 }
 
+.footer-columns ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-columns li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.footer-columns h4 {
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .footer-bottom {
     text-align: center;
     margin-top: 2rem;
@@ -222,7 +283,7 @@ footer {
     font-size: 0.8rem;
 }
 
-/* --- Detail Page Styles --- */
+/* --- DETAIL PAGE --- */
 .detail-container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -235,7 +296,6 @@ footer {
     gap: 2rem;
 }
 
-/* Left Column */
 .detail-main h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
@@ -291,7 +351,6 @@ footer {
     margin-bottom: 1rem;
 }
 
-/* Right Column (Booking) */
 .booking-card {
     background: white;
     padding: 1.5rem;
@@ -341,19 +400,7 @@ footer {
     background: #144917;
 }
 
-.map-placeholder {
-    width: 100%;
-    height: 200px;
-    background: #e0e0e0;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1rem;
-    color: #555;
-}
-
-/* Itinerary Styles */
+/* --- ITINERARY --- */
 .itinerary-item {
     display: flex;
     justify-content: space-between;
@@ -396,29 +443,7 @@ footer {
     cursor: pointer;
 }
 
-/* Logo Styling */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo svg {
-    width: 45px;
-    height: 45px;
-}
-
-.logo h1 {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--primary-green);
-    margin: 0;
-    font-size: 1.6rem;
-    font-weight: 700;
-}
-
-/* --- WIREFRAME ADDITIONS --- */
-
-/* Featured Attractions Section */
+/* --- FEATURED ATTRACTIONS --- */
 .featured-section {
     max-width: 1200px;
     margin: 3rem auto;
@@ -449,7 +474,7 @@ footer {
     gap: 1.5rem;
 }
 
-/* Filter Status Bar */
+/* --- FILTER STATUS BAR --- */
 .filter-status-bar {
     background: #f0f0f0;
     padding: 10px;
@@ -468,7 +493,7 @@ footer {
     font-size: 0.8rem;
 }
 
-/* Pagination Controls */
+/* --- PAGINATION --- */
 .pagination-controls {
     display: flex;
     justify-content: center;
@@ -495,44 +520,102 @@ footer {
     background: #f0f0f0;
 }
 
-/* Footer updates */
-.footer-columns ul {
-    list-style: none;
+/* --- SCREEN READER ONLY --- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
     padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
-.footer-columns li {
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    color: #ddd;
-}
+/* ========================================= */
+/* ===== RESPONSIVE DESIGN (MOBILE) ======== */
+/* ========================================= */
 
-.footer-columns h4 {
-    margin-bottom: 1rem;
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* --- RESPONSIVE DESIGN (Mobile & Tablet) --- */
-
-/* Tablet and small laptop screens */
 @media (max-width: 900px) {
 
-    /* Header stacks logo, nav, and button */
+    /* --- HEADER: Logo + Hamburger on same line --- */
     header {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         padding: 1rem;
-        gap: 1rem;
-        text-align: center;
+        text-align: left;
     }
 
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+    /* Hide the desktop Sign In button */
+    .desktop-signin {
+        display: none;
+    }
+
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* --- MOBILE DROPDOWN MENU --- */
+    #main-nav {
+        display: none;
+        /* Hidden by default */
+        position: absolute;
+        top: 100%;
+        /* Directly below the header */
+        left: 0;
+        width: 100%;
+        background: white;
+        border-top: 1px solid #ddd;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    /* When JS adds 'active' class, show the menu */
+    #main-nav.active {
+        display: block;
+    }
+
+    /* Force the links to stack vertically */
+    #main-nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
         padding: 0;
+        margin: 0;
+        width: 100%;
     }
 
-    /* Hero section adjusts for smaller screens */
+    #main-nav li {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+
+    #main-nav a {
+        display: block;
+        padding: 15px 20px;
+        font-size: 1.1rem;
+        color: var(--text-dark);
+    }
+
+    #main-nav a:hover {
+        background-color: #f9f9f9;
+    }
+
+    /* Show the mobile Sign In button */
+    .mobile-signin {
+        display: block;
+        padding: 15px 20px;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    .mobile-signin .sign-in-btn {
+        width: 100%;
+    }
+
+    /* --- HERO --- */
     .hero {
         padding: 2rem 1rem;
     }
@@ -555,14 +638,14 @@ footer {
         width: 100%;
     }
 
-    /* Main listing layout: Stacks filters on top of results */
+    /* --- LISTING LAYOUT --- */
     .listing-container {
         grid-template-columns: 1fr;
         padding: 1rem;
         gap: 1.5rem;
     }
 
-    /* Featured Attractions: 1 card per row instead of 3 */
+    /* --- FEATURED ATTRACTIONS --- */
     .featured-section {
         padding: 0 1rem;
         margin: 2rem auto;
@@ -572,7 +655,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* Detail Page: Stacks main info and sidebar */
+    /* --- DETAIL PAGE --- */
     .detail-container {
         padding: 0 1rem;
     }
@@ -583,10 +666,9 @@ footer {
 
     .booking-card {
         position: static;
-        /* Disables the sticky sidebar on mobile */
     }
 
-    /* Footer stacks columns vertically */
+    /* --- FOOTER --- */
     .footer-columns {
         flex-direction: column;
         gap: 2rem;
@@ -597,7 +679,6 @@ footer {
 /* Small Mobile Phones */
 @media (max-width: 480px) {
 
-    /* Force the card grid to be 1 column */
     .grid-container {
         grid-template-columns: 1fr;
     }
@@ -606,7 +687,6 @@ footer {
         height: 180px;
     }
 
-    /* Itinerary items stack vertically */
     .itinerary-item {
         flex-direction: column;
         text-align: center;
@@ -619,7 +699,6 @@ footer {
         height: 120px;
     }
 
-    /* Filter sidebar adjustments */
     .filters-sidebar {
         padding: 1rem;
     }
